@@ -28,7 +28,5 @@ export function showCart(hits) {
   </div>`
     ).join('');
   gallery.innerHTML += html;
-  
-
 
 }

@@ -9,7 +9,8 @@ const input = document.querySelector('.search-form');
 const btnSearch = document.querySelector('.btn-submit');
 export const gallery = document.querySelector('.gallery');
 const btnLoadMore = document.querySelector('.load-more');
-let gallerySimpleLightbox = new SimpleLightbox('.gallery a');
+
+let gallerySimpleLightbox = new SimpleLightbox('.photo-card a');
 
 
 
@@ -17,7 +18,9 @@ btnLoadMore.style.display = 'none';
 
 let pageNumber = 1;
 
-btnSearch.addEventListener('click', e => {
+btnSearch.addEventListener('click', onSabmit);
+ 
+function onSabmit(e) {
   e.preventDefault();
   cleanGallery();
   const trimmedValue = input.elements.searchQuery.value;
@@ -37,9 +40,10 @@ btnSearch.addEventListener('click', e => {
       }
     });
   }
-});
+}
 
-btnLoadMore.addEventListener('click', () => {
+btnLoadMore.addEventListener('click', LoadMore);
+function LoadMore() {
   pageNumber++;
   const trimmedValue = input.elements.searchQuery.value;
   btnLoadMore.style.display = 'none';
@@ -54,9 +58,10 @@ btnLoadMore.addEventListener('click', () => {
         `Hooray! We found ${foundData.totalHits} images.`
       );
       btnLoadMore.style.display = 'block';
+              gallerySimpleLightbox.refresh();
     }
   });
-});
+};
 
 function cleanGallery() {
   gallery.innerHTML = '';
