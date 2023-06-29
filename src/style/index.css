@@ -112,6 +112,7 @@ h6 {
     0 100px 80px rgba(0, 0, 0, 0.12);
   margin-bottom: 40px;
   position: fixed;
+  z-index: 3;
 }
 .inpun-Search {
   height: 30px;
@@ -178,4 +179,5 @@ h6 {
   border: none;
   border-radius: 2px;
   cursor: pointer;
+  margin-top: 30px;
 }

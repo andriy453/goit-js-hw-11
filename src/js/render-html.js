@@ -1,4 +1,4 @@
-import { Refs } from './index';
+import { gallery } from './index';
 import { lightbox } from './index'
 import {cleanGallery} from './index'
 export function showCart(hits) {
@@ -27,9 +27,8 @@ export function showCart(hits) {
   </div>
   </div>`
     ).join('');
-  Refs.gallery.innerHTML = html;
-  Refs.btnLoadMore.style.display = 'block';
-  console.log(Refs.btnLoadMore);
-  lightbox.refresh();
+  gallery.innerHTML += html;
+  
+
 
 }
