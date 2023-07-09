@@ -21,6 +21,7 @@ let pageNumber = 1;
 btnSearch.addEventListener('click', onSabmit);
  
 function onSabmit(e) {
+
   e.preventDefault();
   cleanGallery();
   const trimmedValue = input.elements.searchQuery.value;
@@ -40,6 +41,7 @@ function onSabmit(e) {
       }
     });
   }
+  
 }
 
 btnLoadMore.addEventListener('click', LoadMore);
